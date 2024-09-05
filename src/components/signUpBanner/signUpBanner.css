@@ -1,0 +1,27 @@
+.signUpBanner--container {
+    position: relative;
+    background-color: rgba(var(--primary));
+    padding-top: 0.5rem;
+    padding-bottom: 0.5em;
+    font-size: 0.875rem;
+    color: rgba(var(--background));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.promo {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 10px;
+}
+.link-to-signup {
+    text-decoration: underline;
+    text-underline-offset: 4px;
+    font-weight: 500;
+}
+.close-promo {
+    position: absolute;
+    right: 5rem;
+}

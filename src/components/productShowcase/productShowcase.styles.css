@@ -1,0 +1,21 @@
+.productShowcase-container {
+    display: flex;
+    margin: 2.5rem 5rem;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.productCard-list {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: space-between;
+    align-items: center;
+}
+.productShowcase-header {
+    font-weight: bold;
+    font-size: 3em;
+    padding-bottom: 2rem;
+    text-transform: uppercase;
+}
