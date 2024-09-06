@@ -1,8 +1,11 @@
 import { useState } from "react";
 import "./productFooter.styles.css";
+import filter from "../../../assets/filter.svg";
+import dropdown from "../../../assets/dropdown.svg";
 import { productReviews } from "../../../data/data";
 import ReviewCard from "../../reviewCard/ReviewCard";
 import Button from "../../button/Button";
+
 const section = ["Product Details", "Rating & Reviews", "FAQs"];
 
 function ProductFooter({ id }) {
@@ -23,10 +26,23 @@ function ProductFooter({ id }) {
         ))}
       </div>
       <div className="review-section">
-        <h1>
-          ALL Reviews
-          <span> ({reviews[0].reviews.length})</span>
-        </h1>
+        <div className="filter-row">
+          <h1>
+            ALL Reviews
+            <span> ({reviews[0].reviews.length})</span>
+          </h1>
+          <div className="filter-row-right-side">
+            <img src={filter} alt="filter" />
+            <div className="filter-latest">
+              <p>Latest</p>
+
+              <img src={dropdown} alt="dropdown" />
+            </div>
+            <div className="add-review">
+              <Button type="primary" title="Write a Review" />
+            </div>{" "}
+          </div>
+        </div>
         <div className="productReview-list">
           {reviews[0].reviews.map((review, i) => (
             <ReviewCard

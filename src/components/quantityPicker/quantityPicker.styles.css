@@ -4,7 +4,7 @@
     height: 100%;
     justify-content: space-between;
     align-items: center;
-    padding: 5px 0.5rem;
+    padding: 5px 1rem;
     background-color: rgba(var(--secondary));
     border-radius: 40px;
 }

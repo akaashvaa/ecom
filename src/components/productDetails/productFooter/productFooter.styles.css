@@ -42,12 +42,35 @@
     font-size: 2rem;
 }
 .load-review {
-    width: 45%;
     display: flex;
+    width: 17%;
     justify-content: center;
 }
 .review-section span {
     font-size: 1rem;
     padding-left: 5px;
     color: rgba(var(--primary-low));
+}
+.filter-row {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.filter-row-right-side {
+    display: flex;
+    justify-content: space-between;
+    column-gap: 20px;
+    align-items: center;
+}
+.filter-latest {
+    padding: 13px 2rem;
+    display: flex;
+    column-gap: 5px;
+    border-radius: 62px;
+    white-space: nowrap;
+    background-color: rgba(var(--secondary));
+}
+.add-review {
+    width: 250px;
 }
