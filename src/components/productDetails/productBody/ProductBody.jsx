@@ -3,8 +3,11 @@ import "./productBody.styles.css";
 import StarRating from "../../starRating/StarRating";
 import Button from "../../button/Button";
 import QuantityPicker from "../../quantityPicker/QuantityPicker";
+import { useDispatch } from "react-redux";
+import { addItem } from "../../../store/slices/cart/cart.action";
 
 function ProductBody({ product }) {
+  const dispath = useDispatch();
   const {
     id,
     name,
@@ -19,22 +22,28 @@ function ProductBody({ product }) {
     description,
     categories,
   } = product;
+
   const [selectedColor, setSelectedColor] = useState(availableColors[0]);
   const [selectedSize, setSelectedSize] = useState(sizes[0]);
   const [quantity, setQuantity] = useState(1);
+
   // console.log(selectedColor);
+
   const handleAddToCart = () => {
-    const total =
-      quantity * (discountPercentage ? discountedPrice : originalPrice);
+    const price = discountPercentage ? discountedPrice : originalPrice;
+    const total = quantity * price;
     const product = {
       id,
       name,
       imageUrl,
       selectedSize,
       selectedColor,
-      total,
+      discountPercentage,
+      price,
       quantity,
     };
+    dispath(addItem(product));
+
     console.log(product);
   };
   return (
@@ -112,7 +121,11 @@ function ProductBody({ product }) {
         </div>
         <div className="add-to-cart-section">
           <div className="product-adder">
-            <QuantityPicker setQuantity={setQuantity} quantity={quantity} />
+            <QuantityPicker
+              id={id}
+              setQuantity={setQuantity}
+              quantity={quantity}
+            />
           </div>
           <div className="add-to-cart-button">
             <Button

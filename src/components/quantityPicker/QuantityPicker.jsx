@@ -1,19 +1,30 @@
 import { useState } from "react";
 import "./quantityPicker.styles.css";
-function QuantityPicker({ quantity, setQuantity }) {
+import {
+  decreaseQuantity,
+  increaseQuantity,
+} from "../../store/slices/cart/cart.action";
+import { useDispatch } from "react-redux";
+
+function QuantityPicker({ id, quantity, setQuantity }) {
+  const dispatch = useDispatch();
+
+  const handleDecrease = () => {
+    setQuantity((q) => Math.max(1, q - 1));
+    dispatch(decreaseQuantity(id));
+  };
+  const handlerIncrease = () => {
+    setQuantity((q) => q + 1);
+    dispatch(increaseQuantity(id));
+  };
+
   return (
     <div className="quantity-picker">
-      <button
-        onClick={() => setQuantity(Math.max(1, quantity - 1))}
-        className="quantity-button"
-      >
+      <button onClick={handleDecrease} className="quantity-button">
         &#8722;
       </button>
       <span className="quantity">{quantity}</span>
-      <button
-        onClick={() => setQuantity(quantity + 1)}
-        className="quantity-button"
-      >
+      <button onClick={handlerIncrease} className="quantity-button">
         +
       </button>
     </div>

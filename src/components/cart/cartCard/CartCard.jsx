@@ -2,19 +2,15 @@ import { useEffect, useState } from "react";
 import QuantityPicker from "../../quantityPicker/QuantityPicker";
 import deleteIcon from "../../../assets/delete.svg";
 import "./cartCard.styles.css";
+import { useDispatch } from "react-redux";
+import { deleteItem } from "../../../store/slices/cart/cart.action";
 
 function CartCard({ item, setTotalBill, totalBill }) {
+  const dispatch = useDispatch();
   const [quantity, setQuantity] = useState(item.quantity);
-  const [total, setTotal] = useState(item.quantity * item.price);
-
-  useEffect(() => {
-    const newBill = +quantity * item.price;
-    const bill = totalBill - total + newBill;
-    setTotalBill(bill);
-    setTotal(quantity * item.price);
-  }, [quantity]);
 
   const handleDelete = () => {
+    dispatch(deleteItem(item.id));
     console.log("delete " + item.id);
   };
   return (
@@ -32,10 +28,14 @@ function CartCard({ item, setTotalBill, totalBill }) {
           Color:<span> {item.selectedColor}</span>
         </p>
         <div className="item-details-footer">
-          <p className="item-price">${total}</p>
+          <p className="item-price">${item.price * item.quantity}</p>
 
           <div className="cart-adder">
-            <QuantityPicker setQuantity={setQuantity} quantity={quantity} />
+            <QuantityPicker
+              id={item.id}
+              setQuantity={setQuantity}
+              quantity={quantity}
+            />
           </div>
         </div>
       </div>

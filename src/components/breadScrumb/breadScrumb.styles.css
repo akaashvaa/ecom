@@ -1,8 +1,15 @@
 .bs-container {
     display: flex;
+    width: 100%;
     column-gap: 0.5rem;
     color: rgba(var(--primary-low));
 }
 .active {
     color: rgba(var(--primary));
+}
+.bs-row {
+    display: flex;
+    column-gap: 10px;
+    justify-content: space-between;
+    align-items: center;
 }
