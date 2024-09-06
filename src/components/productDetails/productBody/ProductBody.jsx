@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./productBody.styles.css";
 import StarRating from "../../starRating/StarRating";
 import Button from "../../button/Button";
+import QuantityPicker from "../../quantityPicker/QuantityPicker";
 
 function ProductBody({ product }) {
   const {
@@ -110,20 +111,8 @@ function ProductBody({ product }) {
           </div>
         </div>
         <div className="add-to-cart-section">
-          <div className="quantity-picker">
-            <button
-              onClick={() => setQuantity(Math.max(1, quantity - 1))}
-              className="quantity-button"
-            >
-              &#8722;
-            </button>
-            <span className="quantity">{quantity}</span>
-            <button
-              onClick={() => setQuantity(quantity + 1)}
-              className="quantity-button"
-            >
-              +
-            </button>
+          <div className="product-adder">
+            <QuantityPicker setQuantity={setQuantity} quantity={quantity} />
           </div>
           <div className="add-to-cart-button">
             <Button

@@ -143,28 +143,11 @@
     padding-top: 1rem;
     border-top: 1px solid rgba(var(--border));
 }
-
-.quantity-picker {
-    display: flex;
-    align-items: center;
-    padding: 10px 1rem;
-    column-gap: 20px;
-    background-color: rgba(var(--secondary));
-    border-radius: 40px;
+.product-adder {
+    flex-basis: 30%;
 }
-
-.quantity-button {
-    padding: 0 0.5rem;
-    background: none;
-    border: none;
-    cursor: pointer;
-}
-
-.quantity {
-    padding: 0 1rem;
-}
-
 .add-to-cart-button {
+    flex-basis: 70%;
     width: 100%;
 }
 
