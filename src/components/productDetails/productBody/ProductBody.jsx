@@ -87,7 +87,11 @@ function ProductBody({ product }) {
                 onClick={() => setSelectedColor(color)}
                 className={`color-button ${selectedColor === color ? "selected-color" : ""}`}
                 style={{ backgroundColor: color }}
-              />
+              >
+                {selectedColor === color && (
+                  <span className="checkmark">&#10003;</span>
+                )}
+              </button>
             ))}
           </div>
         </div>

@@ -119,11 +119,9 @@
     cursor: pointer;
 }
 
-.color-button.selected-color {
-    outline: 2px solid black;
-    outline-offset: 2px;
+.checkmark {
+    color: rgba(var(--background));
 }
-
 .size-button {
     padding: 0.5rem 3rem;
     font-size: 16px;
