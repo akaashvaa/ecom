@@ -7,18 +7,21 @@ import Button from "../button/Button.jsx";
 function ProductShowcase({ name, type }) {
   const data = type === "new" ? newArrivals : topSelling;
   return (
-    <div className="productShowcase-container">
+    <section
+      id={type === "new" ? "new" : "top"}
+      className="productShowcase-container"
+    >
       <h1 className="productShowcase-header">{name}</h1>
       <div className="productCard-list">
         {data.map((productDetails) => (
           <ProductCard
-            key={productDetails.name}
+            key={productDetails.id}
             productDetails={productDetails}
           />
         ))}
       </div>
       <Button type="secondary" title="View All" />
-    </div>
+    </section>
   );
 }
 export default ProductShowcase;

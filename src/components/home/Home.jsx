@@ -30,7 +30,6 @@ function Home() {
       <Suspense fallback={<div> Review...</div>}>
         <CustomerReview />
       </Suspense>
-      <Footer />
     </div>
   );
 }

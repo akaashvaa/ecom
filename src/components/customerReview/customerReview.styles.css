@@ -24,18 +24,29 @@
     right: -200px;
     backdrop-filter: blur(1px);
 }
+.controller {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    column-gap: 2rem;
+}
+.controller img {
+    cursor: pointer;
+}
 .reviewCard-container {
     display: flex;
-
     column-gap: 1rem;
     flex-wrap: nowrap;
     justify-content: space-evenly;
     align-items: center;
     transform: translateX(-50%);
 }
-.reviewCard-header {
+.customerReview-header {
+    position: relative;
     font-weight: bold;
     font-size: 3em;
-    padding-bottom: 2rem;
+    margin-bottom: 2rem;
     text-transform: uppercase;
 }

@@ -8,14 +8,16 @@ import { Link } from "react-router-dom";
 function Navbar() {
   return (
     <nav>
-      <img src={logo} alt="logo" />
+      <Link to="/">
+        <img src={logo} alt="logo" />
+      </Link>
       <div className="shopLink-container">
         <div className="nav-dropdown">
           <p>Shop </p>
           <img src={dropdown} alt="dropdown" />
         </div>
-        <p>On Sale </p>
-        <p>New Arrivals</p>
+        <a href="#top">On Sale </a>
+        <a href="#new">New Arrivals</a>
         <p>Brands</p>
       </div>
       <div className="search">

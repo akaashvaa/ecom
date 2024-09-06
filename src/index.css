@@ -10,6 +10,7 @@
     --primary-low: 0, 0, 0, 0.6;
     --light-red: 255, 235, 235, 1;
     --green: 1, 171, 49, 1;
+    --border: 0, 0, 0, 0.1;
 }
 
 body {
@@ -26,4 +27,5 @@ body {
 input {
     outline: none;
     background-color: inherit;
+    width: 100%;
 }

@@ -5,7 +5,7 @@ nav {
     column-gap: 4rem;
     row-gap: 1.3rem;
     flex-wrap: wrap;
-    padding: 15px 5rem;
+    padding: 1.5rem 5rem;
 }
 .shopLink-container {
     display: flex;

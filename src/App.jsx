@@ -13,8 +13,8 @@ function App() {
           /* I'm' not using dynamic routing because it is just a simple UI to
           showcase so i'm trying to make it simple */
           <Route index element={<Home />} />
-          <Route path="/details" element={<ProductDetails />} />
-          <Route path="/cart" element={<Cart />} />
+          <Route path="shop/:id" element={<ProductDetails />} />
+          <Route path="cart" element={<Cart />} />
         </Route>
         <Route path="*" element={<h1> 404 : NOT FOUND</h1>} />
       </Routes>
