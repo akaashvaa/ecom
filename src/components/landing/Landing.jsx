@@ -46,7 +46,9 @@ function Landing() {
             designed to bring out your individuality and cater to your sense of
             style.
           </p>
-          <Button type="primary" title="Shop Now " />
+          <div className="shop-now">
+            <Button type="primary" title="Shop Now " />
+          </div>
         </div>
         <div className="self-branding-details">
           <div className="self-branding-details-card">

@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import "./productCard.styles.css";
+import StarRating from "../starRating/StarRating";
 
 function ProductCard({ productDetails }) {
   const {
@@ -11,39 +12,38 @@ function ProductCard({ productDetails }) {
     discountPercentage,
     imageUrl,
   } = productDetails;
-  const numericRating = parseFloat(rating.split("/")[0]);
+
   return (
-    <div className="product-card">
-      <Link to={`/shop/${id}`}>
+    <Link to={`/shop/${id}`}>
+      <div className="product-card">
         <img src={imageUrl} alt={name} className="product-image" />
         <div className="product-info">
           <h3 className="product-name">
             {name.charAt(0).toUpperCase() + name.slice(1).toLowerCase()}
           </h3>
           <div className="product-rating">
-            {"★".repeat(Math.floor(numericRating))}
-            {"☆".repeat(5 - Math.floor(numericRating))}
+            <StarRating rating={rating} />
             <p className="rating-number">
               {rating}/<span>5</span>
             </p>
           </div>
           <div className="product-price">
             <span className="discounted-price">
-              {!discountPercentage ? originalPrice : discountedPrice}
+              ${!discountPercentage ? originalPrice : discountedPrice}
             </span>
 
             {discountPercentage && (
               <>
                 <span className="original-price">${originalPrice}</span>
                 <span className="discount-percentage">
-                  -{discountPercentage}
+                  -{discountPercentage}%
                 </span>
               </>
             )}
           </div>
         </div>
-      </Link>
-    </div>
+      </div>
+    </Link>
   );
 }
 

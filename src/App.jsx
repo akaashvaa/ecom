@@ -4,14 +4,14 @@ import Home from "./components/home/Home";
 import ProductDetails from "./components/productDetails/ProductDetails";
 import Cart from "./components/cart/Cart";
 import Navigation from "./components/navigation/Navigation";
+import ScrollToTop from "./components/scrollToTop/ScrollToTop";
 
 function App() {
   return (
     <BrowserRouter>
+      <ScrollToTop />
       <Routes>
         <Route path="/" element={<Navigation />}>
-          /* I'm' not using dynamic routing because it is just a simple UI to
-          showcase so i'm trying to make it simple */
           <Route index element={<Home />} />
           <Route path="shop/:id" element={<ProductDetails />} />
           <Route path="cart" element={<Cart />} />

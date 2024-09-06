@@ -1,18 +1,16 @@
+#btn {
+    width: inherit;
+    padding: 10px 15px;
+    border-radius: 62px;
+    white-space: nowrap;
+}
 .primary {
     background-color: rgba(var(--primary));
     color: rgba(var(--background));
-    width: 35%;
-    padding: 10px 15px;
-    border-radius: 62px;
     border: 1px solid rgba(var(--primary));
 }
 .secondary {
     background-color: rgba(var(--background));
     color: rgba(var(--primary));
-    width: 300px;
-    white-space: nowrap;
-    margin-top: 2rem;
-    padding: 10px 2rem;
-    border-radius: 62px;
     border: 1px solid rgba(0, 0, 0, 0.1);
 }

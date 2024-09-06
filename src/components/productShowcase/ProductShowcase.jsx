@@ -1,14 +1,15 @@
 import ProductCard from "../productCard/productCard";
 import "./productShowcase.styles.css";
 
-import { topSelling, newArrivals } from "../../data/data.js";
+import { products } from "../../data/data.js";
 import Button from "../button/Button.jsx";
 
-function ProductShowcase({ name, type }) {
-  const data = type === "new" ? newArrivals : topSelling;
+function ProductShowcase({ name, type, btn = true }) {
+  const data = products.filter((el) => el.section === type);
+  // console.log(data);
   return (
     <section
-      id={type === "new" ? "new" : "top"}
+      id={type === "new-arrivals" ? "new" : "top"}
       className="productShowcase-container"
     >
       <h1 className="productShowcase-header">{name}</h1>
@@ -20,7 +21,11 @@ function ProductShowcase({ name, type }) {
           />
         ))}
       </div>
-      <Button type="secondary" title="View All" />
+      {btn && (
+        <div className="view-all">
+          <Button type="secondary" title="View All" />
+        </div>
+      )}
     </section>
   );
 }

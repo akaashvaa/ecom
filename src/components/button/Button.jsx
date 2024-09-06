@@ -1,5 +1,9 @@
 import "./button.styles.css";
-function Button({ type, title }) {
-  return <button className={type}>{title}</button>;
+function Button({ type, title, onClick = () => {} }) {
+  return (
+    <button onClick={onClick} id="btn" className={type}>
+      {title}
+    </button>
+  );
 }
 export default Button;

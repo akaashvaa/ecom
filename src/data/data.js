@@ -11,81 +11,87 @@ import cat1 from "../assets/cat1.png";
 import cat2 from "../assets/cat2.png";
 import cat3 from "../assets/cat3.png";
 import cat4 from "../assets/cat4.png";
-const newArrivals = [
+
+const products = [
   {
     id: "A73",
     name: "T-SHIRT WITH TAPE DETAILS",
-    rating: "4.5/5",
-    originalPrice: "$150",
-    discountedPrice: "$120",
-    discountPercentage: "20%",
+    rating: 4.5,
+    originalPrice: 150,
+    discountedPrice: 120,
+    discountPercentage: 20,
     imageUrl: p1,
+    section: "new-arrivals",
   },
   {
     id: "B76",
     name: "SLEEVELESS HOODIE",
-    rating: "4.7/5",
-    originalPrice: "$95",
+    rating: 4,
+    originalPrice: 95,
     discountedPrice: null,
     discountPercentage: null,
     imageUrl: p2,
+    section: "new-arrivals",
   },
   {
     id: "C79",
     name: "RIPPED DENIM JACKET",
-    rating: "4.8/5",
-    originalPrice: "$170",
-    discountedPrice: "$150",
-    discountPercentage: "10%",
+    rating: 4.8,
+    originalPrice: 170,
+    discountedPrice: 150,
+    discountPercentage: 10,
     imageUrl: p3,
+    section: "new-arrivals",
   },
   {
     id: "D82",
     name: "CASUAL LEATHER SHOES",
-    rating: "4.6/5",
-    originalPrice: "$180",
+    rating: 4.6,
+    originalPrice: 180,
     discountedPrice: null,
     discountPercentage: null,
     imageUrl: p4,
+    section: "new-arrivals",
   },
-];
-
-const topSelling = [
   {
     id: "E85",
     name: "CLASSIC WHITE SNEAKERS",
-    rating: "4.9/5",
-    originalPrice: "$250",
-    discountedPrice: "$200",
-    discountPercentage: "15%",
+    rating: 4.9,
+    originalPrice: 250,
+    discountedPrice: 200,
+    discountPercentage: 15,
     imageUrl: pt1,
+    section: "top-selling",
   },
   {
     id: "F88",
     name: "GRAPHIC PRINT T-SHIRT",
-    rating: "4.7/5",
-    originalPrice: "$80",
+    rating: 3,
+    originalPrice: 80,
     discountedPrice: null,
     discountPercentage: null,
     imageUrl: pt2,
+    section: "top-selling",
   },
   {
     id: "G91",
     name: "CHECKERED FLANNEL SHIRT",
-    rating: "4.6/5",
-    originalPrice: "$130",
-    discountedPrice: "$110",
+    rating: 2,
+    originalPrice: 130,
+    discountedPrice: 110,
     discountPercentage: null,
     imageUrl: pt3,
+    section: "top-selling",
   },
   {
     id: "H94",
     name: "LEATHER BACKPACK",
-    rating: "4.8/5",
-    originalPrice: "$250",
+    rating: 3.5,
+    originalPrice: 250,
     discountedPrice: null,
     discountPercentage: null,
     imageUrl: pt4,
+    section: "top-selling",
   },
 ];
 
@@ -185,7 +191,7 @@ const productDetails = [
   {
     id: "A73",
     images: [p1, p1, p1],
-    sizes: ["S", "M", "L", "XL"],
+    sizes: ["Small", "Medium", "Large", "X-Large"],
     availableColors: ["red", "blue", "black"],
     description:
       "This t-shirt with tape details is crafted from premium cotton fabric, providing both comfort and style. It's perfect for casual outings.",
@@ -194,7 +200,7 @@ const productDetails = [
   {
     id: "B76",
     images: [p2, p2, p2],
-    sizes: ["M", "L"],
+    sizes: ["Medium", "Large"],
     availableColors: ["gray", "black"],
     description:
       "Stay stylish with this sleeveless hoodie, ideal for layering during gym sessions or casual outings. Made from lightweight and breathable material.",
@@ -203,8 +209,8 @@ const productDetails = [
   {
     id: "C79",
     images: [p3, p3, p3],
-    sizes: ["S", "M", "L"],
-    availableColors: ["blue", "dark green"],
+    sizes: ["Small", "Medium", "Large"],
+    availableColors: ["blue", "green"],
     description:
       "A ripped denim jacket that adds an edge to any outfit. Made from durable denim, it features distressed detailing for a trendy look.",
     categories: ["Men", "Jackets"],
@@ -230,7 +236,7 @@ const productDetails = [
   {
     id: "F88",
     images: [pt2, pt2, pt2],
-    sizes: ["S", "M", "L", "XL"],
+    sizes: ["Small", "Medium", "Large", "X-Large"],
     availableColors: ["black", "white"],
     description:
       "This graphic t-shirt is perfect for any occasion. Crafted from a soft and breathable fabric, it offers superior comfort and style.",
@@ -239,7 +245,7 @@ const productDetails = [
   {
     id: "G91",
     images: [pt3, pt3, pt3],
-    sizes: ["M", "L", "XL"],
+    sizes: ["Medium", "Large", "X-Large"],
     availableColors: ["red", "black"],
     description:
       "This checkered flannel shirt is perfect for outdoor adventures or casual wear. Made from soft cotton, it provides warmth and a stylish look.",
@@ -260,16 +266,19 @@ const productReviews = [
     id: "A73",
     reviews: [
       {
-        username: "john_doe",
-        rating: "5/5",
-        comment: "Great quality and fit! The color options are awesome.",
+        name: "John Doe",
+        rating: 5,
+        review:
+          " I value simplicity and functionality. This t-shirt not only represents those principles but also feels great to wear. It's evident that the designer poured their creativity into making this t-shirt stand out.",
         date: "2024-09-06",
+        verified: true,
       },
       {
-        username: "jane_smith",
-        rating: "4/5",
-        comment: "Comfortable to wear but the sizes run a bit large.",
+        name: "Jane Smith",
+        rating: 4,
+        review: "Comfortable to wear but the sizes run a bit large.",
         date: "2024-09-04",
+        verified: false,
       },
     ],
   },
@@ -277,10 +286,11 @@ const productReviews = [
     id: "B76",
     reviews: [
       {
-        username: "sam_adams",
-        rating: "4.5/5",
-        comment: "Perfect for gym wear, and the material is breathable.",
+        name: "Sam Adams",
+        rating: 4.5,
+        review: "Perfect for gym wear, and the material is breathable.",
         date: "2024-08-30",
+        verified: true,
       },
     ],
   },
@@ -288,16 +298,18 @@ const productReviews = [
     id: "C79",
     reviews: [
       {
-        username: "mike_rogers",
-        rating: "5/5",
-        comment: "Awesome jacket, fits perfectly, and has a cool design.",
+        name: "Mike Rogers",
+        rating: 5,
+        review: "Awesome jacket, fits perfectly, and has a cool design.",
         date: "2024-07-25",
+        verified: true,
       },
       {
-        username: "lily_evans",
-        rating: "4.8/5",
-        comment: "Really love this denim jacket. The quality is top-notch.",
+        name: "Lily Evans",
+        rating: 4.8,
+        review: "Really love this denim jacket. The quality is top-notch.",
         date: "2024-07-27",
+        verified: false,
       },
     ],
   },
@@ -305,10 +317,11 @@ const productReviews = [
     id: "D82",
     reviews: [
       {
-        username: "alex_miller",
-        rating: "4/5",
-        comment: "Stylish shoes but a bit tight around the toes.",
+        name: "Alex Miller",
+        rating: 4,
+        review: "Stylish shoes but a bit tight around the toes.",
         date: "2024-08-05",
+        verified: true,
       },
     ],
   },
@@ -316,11 +329,12 @@ const productReviews = [
     id: "E85",
     reviews: [
       {
-        username: "lucy_liu",
-        rating: "5/5",
-        comment:
+        name: "Lucy Liu",
+        rating: 5,
+        review:
           "Best sneakers I've ever bought! Super comfortable and durable.",
         date: "2024-06-18",
+        verified: true,
       },
     ],
   },
@@ -328,10 +342,11 @@ const productReviews = [
     id: "F88",
     reviews: [
       {
-        username: "jack_brown",
-        rating: "4.7/5",
-        comment: "Nice print and good quality fabric.",
+        name: "Jack Brown",
+        rating: 4.7,
+        review: "Nice print and good quality fabric.",
         date: "2024-07-10",
+        verified: false,
       },
     ],
   },
@@ -339,10 +354,11 @@ const productReviews = [
     id: "G91",
     reviews: [
       {
-        username: "emma_clark",
-        rating: "4.6/5",
-        comment: "Good flannel shirt, but the fabric feels a bit stiff.",
+        name: "Emma Clark",
+        rating: 4.6,
+        review: "Good flannel shirt, but the fabric feels a bit stiff.",
         date: "2024-06-22",
+        verified: true,
       },
     ],
   },
@@ -350,18 +366,18 @@ const productReviews = [
     id: "H94",
     reviews: [
       {
-        username: "mark_white",
-        rating: "4.8/5",
-        comment: "This backpack is spacious and durable. A great buy!",
+        name: "Mark White",
+        rating: 4.8,
+        review: "This backpack is spacious and durable. A great buy!",
         date: "2024-08-02",
+        verified: false,
       },
     ],
   },
 ];
 
 export {
-  newArrivals,
-  topSelling,
+  products,
   styles,
   customerReviews,
   siteSections,

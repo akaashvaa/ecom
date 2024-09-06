@@ -1,0 +1,53 @@
+.productFooter-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+.section-btn {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    border-bottom: 1px solid rgba(var(--border));
+}
+.section-btn p {
+    text-align: center;
+    color: rgba(var(--primary-low));
+    cursor: pointer;
+    height: 100%;
+    width: 100%;
+    padding: 1rem 0;
+}
+.section-btn .active {
+    text-align: center;
+    color: rgba(var(--primary));
+    border-bottom: 2px solid rgba(var(--primary));
+}
+.productReview-list {
+    width: 100%;
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: repeat(2, 1fr);
+}
+.review-section {
+    display: flex;
+    gap: 1.5rem;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.review-section h1 {
+    width: 100%;
+    text-align: start;
+    font-size: 2rem;
+}
+.load-review {
+    width: 45%;
+    display: flex;
+    justify-content: center;
+}
+.review-section span {
+    font-size: 1rem;
+    padding-left: 5px;
+    color: rgba(var(--primary-low));
+}

@@ -3,11 +3,7 @@
     flex-direction: column;
     margin: 0 5rem;
     padding: 2rem 0;
+    margin-bottom: 5rem;
     row-gap: 2rem;
     border-top: 1px solid rgba(var(--border));
-}
-.bs-container {
-    display: flex;
-    column-gap: 0.5rem;
-    color: rgba(var(--primary-low));
 }

@@ -3,7 +3,7 @@ import { styles } from "../../data/data";
 
 const Category = () => {
   return (
-    <div className="browse-by-style">
+    <div className="category-container">
       <h2>BROWSE BY DRESS STYLE</h2>
       <div className="style-grid">
         {styles.map((style, i) => (

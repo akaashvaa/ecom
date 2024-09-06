@@ -28,13 +28,7 @@
     justify-content: start;
     color: rgba(var(--primary-low));
 }
-.shop-now {
-    background-color: rgba(var(--primary));
-    color: rgba(var(--background));
-    width: 35%;
-    padding: 10px 15px;
-    border-radius: 62px;
-}
+
 .self-branding-details {
     display: flex;
     justify-content: space-between;
@@ -60,4 +54,8 @@
     align-items: center;
     background-color: rgba(var(--primary));
     padding: 2rem 5rem;
+}
+
+.shop-now {
+    width: 65%;
 }
